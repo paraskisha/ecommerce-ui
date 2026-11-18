@@ -1,6 +1,6 @@
 <!-- app/pages/products.vue -->
 <template>
-    <v-layout class="product-layout">
+    <v-layout class="product-layout" theme="light">
         <v-app-bar flat height="76" class="shop-header">
             <v-container class="d-flex align-center">
                 <NuxtLink to="/" class="logo-link d-flex align-center ga-2">
@@ -42,16 +42,20 @@
                 </v-btn>
         </div>
     
-        <v-card class="mb-6" rounded="lg" elevation="1">
+        <v-card class="mb-6 product-search-card" theme="light" rounded="lg" elevation="1">
             <v-card-text>
                 <v-text-field
                 v-model="search"
+                class="product-search"
                 label="Search product"
                 prepend-inner-icon="mdi-magnify"
                 variant="outlined"
                 density="comfortable"
                 clearable
                 hide-details
+                theme="light"
+                bg-color="white"
+                color="primary"
                 />
             </v-card-text>
         </v-card>
@@ -138,8 +142,8 @@
                         </tbody>
                         </v-table>
                     </v-card>
-            <v-dialog v-model="productDialog" max-width="700" persistent>
-<v-card rounded="xl">
+            <v-dialog v-model="productDialog" max-width="700" persistent theme="dark">
+<v-card rounded="xl" theme="dark">
 <v-card-title class="d-flex align-center justify-space-between pa-5">
 <span class="text-h5 font-weight-bold">
 {{ isEditing ? 'Edit Product' : 'Add Product' }}
@@ -625,6 +629,8 @@ resetForm()
 <style scoped>
 .product-layout {
 min-height: 100vh;
+background: #f5f7fb;
+color: #172b4d;
 }
 .product-page {
 min-height: 100vh;
@@ -637,6 +643,22 @@ border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 .logo-link {
 text-decoration: none;
 white-space: nowrap;
+}
+.product-search-card {
+background: #ffffff;
+}
+.product-search :deep(.v-field),
+.product-search :deep(.v-field__overlay),
+.product-search :deep(.v-field__outline) {
+background: #ffffff;
+color: #172b4d;
+}
+.product-search :deep(input) {
+color: #172b4d;
+}
+.product-search :deep(.v-field-label),
+.product-search :deep(.v-icon) {
+color: #65758c;
 }
 .product-table-card {
 overflow-x: auto;

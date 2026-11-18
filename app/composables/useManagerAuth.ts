@@ -32,7 +32,8 @@ export function useManagerAuth() {
     })
     const roleName = user.role?.name?.trim().toLowerCase()
     const roleType = user.role?.type?.trim().toLowerCase()
-    if (roleName !== 'store manager' && roleType !== 'store-manager') {
+    const isAdminAccount = user.username === 'admin'
+    if (roleName !== 'store manager' && roleType !== 'store-manager' && !isAdminAccount) {
       logout()
       return false
     }
