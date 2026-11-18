@@ -8,21 +8,21 @@
         </NuxtLink>
         <v-spacer />
         <nav class="store-desktop-nav d-flex align-center ga-2">
-          <v-btn variant="text" href="#shop">Shop</v-btn>
-          <v-btn variant="text" href="#categories">Categories</v-btn>
-          <v-btn variant="text" href="#about">About</v-btn>
+          <v-btn color="primary" variant="outlined" href="#shop">Shop</v-btn>
+          <v-btn color="primary" variant="outlined" href="#categories">Categories</v-btn>
+          <v-btn color="primary" variant="outlined" href="#about">About</v-btn>
         </nav>
         <v-btn
           class="ml-2"
           color="primary"
-          variant="tonal"
+          variant="outlined"
           prepend-icon="mdi-cart-outline"
           @click="cartOpen = true"
         >
           Cart
           <v-badge v-if="cartCount" :content="cartCount" color="error" floating />
         </v-btn>
-        <v-btn class="store-manage-button ml-2 d-none d-sm-flex" to="/login?redirect=/products" variant="text" prepend-icon="mdi-cog-outline">
+        <v-btn class="store-manage-button ml-2 d-none d-sm-flex" color="primary" to="/login?redirect=/products" variant="outlined" prepend-icon="mdi-cog-outline">
           Manage Products
         </v-btn>
       </v-container>

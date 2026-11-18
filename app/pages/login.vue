@@ -7,7 +7,7 @@
           <span class="text-h5 font-weight-bold">Shop<span class="text-primary">Kart</span></span>
         </NuxtLink>
         <v-spacer />
-        <v-btn to="/" variant="text" prepend-icon="mdi-arrow-left">Back to shop</v-btn>
+        <v-btn to="/" color="primary" variant="outlined" prepend-icon="mdi-arrow-left">Back to shop</v-btn>
       </v-container>
     </v-app-bar>
 
@@ -60,12 +60,9 @@
                 :loading="signingIn"
                 :disabled="!identifier.trim() || !password"
               >
-                Sign in to manage products
+                Sign In
               </v-btn>
             </form>
-            <p class="manager-login-help mt-5 mb-0">
-              Manager accounts and roles are managed in Strapi.
-            </p>
           </v-card-text>
         </v-card>
       </v-container>

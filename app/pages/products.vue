@@ -1,7 +1,7 @@
 <!-- app/pages/products.vue -->
 <template>
     <v-layout class="product-layout" theme="light">
-        <v-app-bar flat height="76" class="shop-header">
+        <v-app-bar flat height="76" class="shop-header" theme="light">
             <v-container class="d-flex align-center">
                 <NuxtLink to="/" class="logo-link d-flex align-center ga-2">
                 <v-icon icon="mdi-cart" color="primary" size="38" />
@@ -10,15 +10,17 @@
                 </span>
                 </NuxtLink>
             <v-spacer />
-                <v-btn to="/" variant="text" prepend-icon="mdi-home-outline">
+            <div class="d-flex align-center ga-3">
+                <v-btn to="/" color="primary" variant="outlined" theme="light" prepend-icon="mdi-home-outline">
                 Home
                 </v-btn>
-                <v-btn color="primary" variant="tonal" prepend-icon="mdi-package-variant">
+                <v-btn color="primary" variant="outlined" prepend-icon="mdi-package-variant">
                 Manage Products
                 </v-btn>
-                <v-btn variant="text" prepend-icon="mdi-logout" @click="signOut">
+                <v-btn color="primary" variant="outlined" prepend-icon="mdi-logout" @click="signOut">
                 Sign out{{ profile?.username ? ` (${profile.username})` : '' }}
                 </v-btn>
+            </div>
             </v-container>
         </v-app-bar>
     <v-main class="product-page">
